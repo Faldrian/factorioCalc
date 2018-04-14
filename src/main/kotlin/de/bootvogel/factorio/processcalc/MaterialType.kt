@@ -1,0 +1,37 @@
+package de.bootvogel.factorio.processcalc
+
+enum class MaterialType {
+    PRODUCTION_SCIENCE_PACK,
+    ELECTRIC_ENGINE_UNIT,
+    ELECTRIC_FURNACE,
+    STEEL_PLATE,
+    ADVANCED_CIRCUIT,
+    STONE,
+    IRON_PLATE,
+    IRON_ORE,
+    PLASTIC_BAR,
+    ELECTRONIC_CIRCUIT,
+    COPPER_CABLE,
+    COPPER_ORE,
+    COPPER_PLATE,
+    PETROLEUM_GAS,
+    COAL,
+
+    ENGINE_UNIT,
+
+    LUBRICANT,
+
+    IRON_GEAR_WHEEL,
+
+    PIPE,
+
+    PROCESSING_UNIT,
+
+    SPEED_MODULE,
+
+    HIGH_TECH_SCIENCE_PACK,
+
+    BATTERY,
+
+    SULFURIC_ACID
+}
