@@ -33,5 +33,19 @@ enum class MaterialType {
 
     BATTERY,
 
-    SULFURIC_ACID
+    SULFURIC_ACID,
+
+    MINING_DRILL,
+
+    SCIENCE_PACK_3,
+
+    MILITARY_SCIENCE_PACK,
+
+    GRENADE,
+
+    GUN_TURRET,
+
+    PIERCING_ROUNDS_MAGAZINE,
+
+    FIREARM_MAGAZINE
 }

@@ -3,16 +3,23 @@ package de.bootvogel.factorio.processcalc
 
 fun main(args: Array<String>) {
     val givenMaterials = listOf(
-            MaterialType.IRON_ORE,
+            MaterialType.IRON_PLATE,
+            MaterialType.STEEL_PLATE,
+            MaterialType.PLASTIC_BAR,
             MaterialType.COAL,
             MaterialType.PETROLEUM_GAS,
-            MaterialType.COPPER_ORE,
+            MaterialType.COPPER_PLATE,
             MaterialType.STONE,
-            MaterialType.LUBRICANT
+            MaterialType.LUBRICANT,
+            MaterialType.SULFURIC_ACID,
+            MaterialType.ELECTRONIC_CIRCUIT,
+//            MaterialType.ADVANCED_CIRCUIT,
+            MaterialType.ENGINE_UNIT,
+            MaterialType.PROCESSING_UNIT
     )
 
     val wantedOutput = listOf(
-            Material(MaterialType.PRODUCTION_SCIENCE_PACK, 1f)
+            Material(MaterialType.PROCESSING_UNIT, 1f)
     )
 
     val wantedMaterials = wantedOutput.map { it.type }

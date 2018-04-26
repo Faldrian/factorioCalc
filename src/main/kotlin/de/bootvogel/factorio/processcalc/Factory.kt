@@ -18,6 +18,20 @@ class Factory(val output: Material, val input: List<Material>, val timePerProces
                                 Material(MaterialType.SPEED_MODULE, 1f)
                         ),
                         14f),
+                Factory(Material(MaterialType.MILITARY_SCIENCE_PACK, 2f),
+                        listOf(
+                                Material(MaterialType.GRENADE, 1f),
+                                Material(MaterialType.GUN_TURRET, 1f),
+                                Material(MaterialType.PIERCING_ROUNDS_MAGAZINE, 1f)
+                        ),
+                        10f),
+                Factory(Material(MaterialType.SCIENCE_PACK_3, 1f),
+                        listOf(
+                                Material(MaterialType.ADVANCED_CIRCUIT, 1f),
+                                Material(MaterialType.ENGINE_UNIT, 1f),
+                                Material(MaterialType.MINING_DRILL, 1f)
+                        ),
+                        12f),
 
 
                 // PRODUCTION THINGS
@@ -28,6 +42,41 @@ class Factory(val output: Material, val input: List<Material>, val timePerProces
                                 Material(MaterialType.STONE, 10f)
                         ),
                         5f),
+                Factory(Material(MaterialType.MINING_DRILL, 1f),
+                        listOf(
+                                Material(MaterialType.IRON_PLATE, 10f),
+                                Material(MaterialType.IRON_GEAR_WHEEL, 5f),
+                                Material(MaterialType.ELECTRONIC_CIRCUIT, 3f)
+                        ),
+                        2f),
+
+
+                // MILITARY THINGS
+                Factory(Material(MaterialType.GRENADE, 1f),
+                        listOf(
+                                Material(MaterialType.COAL, 10f),
+                                Material(MaterialType.IRON_PLATE, 5f)
+                        ),
+                        8f),
+                Factory(Material(MaterialType.GUN_TURRET, 1f),
+                        listOf(
+                                Material(MaterialType.COPPER_PLATE, 10f),
+                                Material(MaterialType.IRON_GEAR_WHEEL, 10f),
+                                Material(MaterialType.IRON_PLATE, 20f)
+                        ),
+                        8f),
+                Factory(Material(MaterialType.PIERCING_ROUNDS_MAGAZINE, 1f),
+                        listOf(
+                                Material(MaterialType.COPPER_PLATE, 5f),
+                                Material(MaterialType.FIREARM_MAGAZINE, 1f),
+                                Material(MaterialType.STEEL_PLATE, 1f)
+                        ),
+                        3f),
+                Factory(Material(MaterialType.FIREARM_MAGAZINE, 1f),
+                        listOf(
+                                Material(MaterialType.IRON_PLATE, 4f)
+                        ),
+                        1f),
 
 
                 // CHEMISTY
