@@ -39,7 +39,7 @@ class Factory(val output: Material, val input: List<Material>, val timePerProces
                         listOf(
                                 Material(MaterialType.STEEL_PLATE, 10f),
                                 Material(MaterialType.ADVANCED_CIRCUIT, 5f),
-                                Material(MaterialType.STONE, 10f)
+                                Material(MaterialType.STONE_BRICK, 10f)
                         ),
                         5f),
                 Factory(Material(MaterialType.MINING_DRILL, 1f),
@@ -180,6 +180,15 @@ class Factory(val output: Material, val input: List<Material>, val timePerProces
                 Factory(Material(MaterialType.IRON_PLATE, 1f),
                         listOf(
                                 Material(MaterialType.IRON_ORE, 1f)
+                        ),
+                        3.5f,
+                        2f),
+
+                // STONES
+
+                        Factory(Material(MaterialType.STONE_BRICK, 1f),
+                        listOf(
+                                Material(MaterialType.STONE, 2f)
                         ),
                         3.5f,
                         2f)

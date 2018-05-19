@@ -12,14 +12,15 @@ fun main(args: Array<String>) {
             MaterialType.STONE,
             MaterialType.LUBRICANT,
             MaterialType.SULFURIC_ACID,
-            MaterialType.ELECTRONIC_CIRCUIT,
+//            MaterialType.ELECTRONIC_CIRCUIT,
 //            MaterialType.ADVANCED_CIRCUIT,
-            MaterialType.ENGINE_UNIT,
-            MaterialType.PROCESSING_UNIT
+            MaterialType.MINING_DRILL
+//            MaterialType.ENGINE_UNIT,
+//            MaterialType.PROCESSING_UNIT
     )
 
     val wantedOutput = listOf(
-            Material(MaterialType.PROCESSING_UNIT, 1f)
+            Material(MaterialType.PROCESSING_UNIT, 0.125f)
     )
 
     val wantedMaterials = wantedOutput.map { it.type }

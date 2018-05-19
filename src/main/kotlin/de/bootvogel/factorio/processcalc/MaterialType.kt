@@ -6,7 +6,7 @@ enum class MaterialType {
     ELECTRIC_FURNACE,
     STEEL_PLATE,
     ADVANCED_CIRCUIT,
-    STONE,
+    STONE_BRICK,
     IRON_PLATE,
     IRON_ORE,
     PLASTIC_BAR,
@@ -47,5 +47,7 @@ enum class MaterialType {
 
     PIERCING_ROUNDS_MAGAZINE,
 
-    FIREARM_MAGAZINE
+    FIREARM_MAGAZINE,
+
+    STONE
 }
