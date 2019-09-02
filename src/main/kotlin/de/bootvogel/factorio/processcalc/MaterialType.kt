@@ -49,5 +49,31 @@ enum class MaterialType {
 
     FIREARM_MAGAZINE,
 
-    STONE
+    STONE,
+
+    SATELLITE,
+
+    LOW_DENSITY_STRUCTURE,
+
+    ROCKET_FUEL,
+
+    SOLAR_PANEL,
+
+    ACCUMULATOR,
+
+    RADAR,
+
+    SOLID_FUEL,
+
+    ROCKET_CONTROL_UNIT,
+
+    ARTILLERY_SHELL,
+
+    EXPLOSIVES,
+
+    EXPLOSIVE_CANNON_SHELL,
+
+    SULFUR,
+
+    WATER
 }

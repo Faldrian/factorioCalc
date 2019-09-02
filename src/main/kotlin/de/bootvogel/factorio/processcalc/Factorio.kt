@@ -3,14 +3,13 @@ package de.bootvogel.factorio.processcalc
 
 fun main() {
     val givenMaterials = listOf(
-            MaterialType.IRON_PLATE,
-            MaterialType.STEEL_PLATE,
-            MaterialType.ELECTRONIC_CIRCUIT,
-            MaterialType.ADVANCED_CIRCUIT
+            MaterialType.IRON_ORE,
+            MaterialType.COPPER_ORE,
+            MaterialType.COAL
     )
 
     val wantedOutput = listOf(
-            Material(MaterialType.SCIENCE_PACK_3, 0.75f)
+            Material(MaterialType.MILITARY_SCIENCE_PACK, 3f)
     )
 
     val wantedMaterials = wantedOutput.map { it.type }
@@ -73,15 +72,15 @@ fun buildFactoryList(startFactory: Factory, givenMaterials: List<MaterialType>):
 }
 
 fun cummulativeEffects(snapshot: List<FactoryConfiguration>): Collection<Material> {
-    var effects = mapOf<MaterialType, Material>()
+    val effects = mutableMapOf<MaterialType, Material>()
 
-    snapshot.forEach {
-        it.factory.getEffect(it.numberOfFactories).forEach {
-            val materialLookup = effects[it.type]
+    snapshot.forEach { factoryConfiguration ->
+        factoryConfiguration.factory.getEffect(factoryConfiguration.numberOfFactories).forEach { material ->
+            val materialLookup = effects[material.type]
             if (materialLookup == null)
-                effects += Pair(it.type, it)
+                effects += Pair(material.type, material)
             else
-                materialLookup.amount += it.amount
+                materialLookup.amount += material.amount
         }
     }
 

@@ -1,7 +1,15 @@
 package de.bootvogel.factorio.processcalc
 
-class Factory(val output: Material, val input: List<Material>, val timePerProcess: Float, val factorySpeed: Float = 0.75f) {
+class Factory(val output: Material, val input: List<Material>, val timePerProcess: Float, val factorySpeed: Float = factorySpeedYellow) {
     companion object {
+        val factorySpeedGrey: Float = 0.5f
+        val factorySpeedBlue: Float = 0.75f
+        val factorySpeedYellow: Float = 1.25f
+
+        val factorySpeedElecticSmelter: Float = 2f
+        val factorySpeedChemistry: Float = 1.25f
+
+
         val factoryList: List<Factory> = listOf(
                 // SCIENCE PACKS
                 Factory(Material(MaterialType.PRODUCTION_SCIENCE_PACK, 2f),
@@ -86,7 +94,7 @@ class Factory(val output: Material, val input: List<Material>, val timePerProces
                                 Material(MaterialType.PETROLEUM_GAS, 20f)
                         ),
                         1f,
-                        1.25f),
+                        factorySpeedChemistry),
                 Factory(Material(MaterialType.BATTERY, 1f),
                         listOf(
                                 Material(MaterialType.IRON_PLATE, 1f),
@@ -94,7 +102,7 @@ class Factory(val output: Material, val input: List<Material>, val timePerProces
                                 Material(MaterialType.SULFURIC_ACID, 20f)
                         ),
                         5f,
-                        1.25f),
+                        factorySpeedChemistry),
 
 
                 // EFFICIENCY MODULES
@@ -157,7 +165,7 @@ class Factory(val output: Material, val input: List<Material>, val timePerProces
                                 Material(MaterialType.COPPER_ORE, 1f)
                         ),
                         3.5f,
-                        2f),
+                        factorySpeedElecticSmelter),
 
 
                 // IRON STUFF
@@ -176,22 +184,117 @@ class Factory(val output: Material, val input: List<Material>, val timePerProces
                                 Material(MaterialType.IRON_PLATE, 5f)
                         ),
                         17.5f,
-                        2f),
+                        factorySpeedElecticSmelter),
                 Factory(Material(MaterialType.IRON_PLATE, 1f),
                         listOf(
                                 Material(MaterialType.IRON_ORE, 1f)
                         ),
                         3.5f,
-                        2f),
+                        factorySpeedElecticSmelter),
 
                 // STONES
 
-                        Factory(Material(MaterialType.STONE_BRICK, 1f),
+                Factory(Material(MaterialType.STONE_BRICK, 1f),
                         listOf(
                                 Material(MaterialType.STONE, 2f)
                         ),
                         3.5f,
-                        2f)
+                        factorySpeedElecticSmelter),
+
+                // SATELLITE STUFF
+                Factory(Material(MaterialType.SATELLITE, 1f),
+                        listOf(
+                                Material(MaterialType.PROCESSING_UNIT, 100f),
+                                Material(MaterialType.LOW_DENSITY_STRUCTURE, 100f),
+                                Material(MaterialType.ROCKET_FUEL, 50f),
+                                Material(MaterialType.SOLAR_PANEL, 100f),
+                                Material(MaterialType.ACCUMULATOR, 100f),
+                                Material(MaterialType.RADAR, 5f)
+                        ),
+                        5f),
+
+                Factory(Material(MaterialType.LOW_DENSITY_STRUCTURE, 1f),
+                        listOf(
+                                Material(MaterialType.COPPER_PLATE, 5f),
+                                Material(MaterialType.STEEL_PLATE, 10f),
+                                Material(MaterialType.PLASTIC_BAR, 5f)
+                        ),
+                        30f),
+
+                Factory(Material(MaterialType.ROCKET_FUEL, 1f),
+                        listOf(
+                                Material(MaterialType.SOLID_FUEL, 10f)
+                        ),
+                        30f),
+
+                Factory(Material(MaterialType.SOLAR_PANEL, 1f),
+                        listOf(
+                                Material(MaterialType.COPPER_PLATE, 5f),
+                                Material(MaterialType.STEEL_PLATE, 5f),
+                                Material(MaterialType.ELECTRONIC_CIRCUIT, 15f)
+                        ),
+                        10f),
+
+                Factory(Material(MaterialType.ACCUMULATOR, 1f),
+                        listOf(
+                                Material(MaterialType.IRON_PLATE, 2f),
+                                Material(MaterialType.BATTERY, 5f)
+                        ),
+                        10f),
+
+                Factory(Material(MaterialType.RADAR, 1f),
+                        listOf(
+                                Material(MaterialType.IRON_PLATE, 10f),
+                                Material(MaterialType.IRON_GEAR_WHEEL, 5f),
+                                Material(MaterialType.ELECTRONIC_CIRCUIT, 5f)
+                        ),
+                        0.5f),
+
+                Factory(Material(MaterialType.SOLID_FUEL, 1f),
+                        listOf(
+                                Material(MaterialType.PETROLEUM_GAS, 20f)
+                        ),
+                        3f,
+                        factorySpeedChemistry),
+
+                Factory(Material(MaterialType.ROCKET_CONTROL_UNIT, 1f),
+                        listOf(
+                                Material(MaterialType.PROCESSING_UNIT, 1f),
+                                Material(MaterialType.SPEED_MODULE, 1f)
+                        ),
+                        30f),
+
+                // ARTILLERY_SHELL
+                Factory(Material(MaterialType.ARTILLERY_SHELL, 1f),
+                        listOf(
+                                Material(MaterialType.EXPLOSIVES, 8f),
+                                Material(MaterialType.EXPLOSIVE_CANNON_SHELL, 4f),
+                                Material(MaterialType.RADAR, 1f)
+                        ),
+                        15f),
+
+                Factory(Material(MaterialType.EXPLOSIVE_CANNON_SHELL, 1f),
+                        listOf(
+                                Material(MaterialType.STEEL_PLATE, 2f),
+                                Material(MaterialType.PLASTIC_BAR, 2f),
+                                Material(MaterialType.EXPLOSIVES, 2f)
+                        ),
+                        8f),
+
+                Factory(Material(MaterialType.EXPLOSIVES, 2f),
+                        listOf(
+                                Material(MaterialType.COAL, 1f),
+                                Material(MaterialType.SULFUR, 1f),
+                                Material(MaterialType.WATER, 10f)
+                        ),
+                        5f),
+
+                Factory(Material(MaterialType.SULFUR, 2f),
+                        listOf(
+                                Material(MaterialType.WATER, 30f),
+                                Material(MaterialType.PETROLEUM_GAS, 30f)
+                        ),
+                        1f)
         )
 
         fun getFactory(type: MaterialType): Factory {
@@ -229,7 +332,7 @@ class Factory(val output: Material, val input: List<Material>, val timePerProces
     }
 
     fun getFactoriesForOutput(amount: Float): Int {
-        return Math.ceil((1 / (output.amount * factorySpeed * (1 / timePerProcess) * (1/amount))).toDouble()).toInt()
+        return Math.ceil((1 / (output.amount * factorySpeed * (1 / timePerProcess) * (1 / amount))).toDouble()).toInt()
     }
 
 
